@@ -1,10 +1,14 @@
 <template>
-  <p>Home view</p>
+  <ProductList/>
 </template>
 
 <script>
-export default {
+import ProductList from "../components/ProductList/ProductList.vue"
 
+export default {
+  components: {
+    ProductList
+  }
 }
 </script>
 
