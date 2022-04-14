@@ -1,11 +1,11 @@
 <template>
-  <v-container v-if="loged">
+  <section v-if="loged">
     <NavBar/>
     <ProductList/>
-  </v-container>
-  <v-container v-else>
+  </section>
+  <section v-else>
     <LogIn/>
-  </v-container>
+  </section>
 </template>
 
 <script>

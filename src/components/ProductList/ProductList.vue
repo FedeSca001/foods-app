@@ -1,5 +1,7 @@
 <template>
-  <p>product</p>
+  <v-main>
+    <p>product</p>
+  </v-main>
 </template>
 
 <script>
