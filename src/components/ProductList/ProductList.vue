@@ -1,7 +1,7 @@
 <template>
   <v-main>
     <h3>
-      {{userData.name}} Welcome to {{useProducts().restorants.length}} restorant
+      Welcome to {{useProducts().restorants.length}} restorant
     </h3>
     <div class="containFlex">
       <v-col v-for="resto in useProducts().restorants" :key="resto.id"
@@ -23,10 +23,8 @@
           </v-card-subtitle>
           <v-card-actions>
             <v-btn
-              color="orange-lighten-2"
-              variant="text">
-              Foods list
-            </v-btn>
+              color="green">
+                Go to restorant</v-btn>
           </v-card-actions>
           <v-card-text v-for="food in resto.foods" :key="food.id" >
             {{food.foodname}}
@@ -37,19 +35,16 @@
   </v-main>
 </template>
 
-<script setup>
+<script>
 import { ref } from '@vue/reactivity'
 import {useProducts} from '../../store/products'
-import {useUser} from '../../store/index'
-  let userData = ref(useUser().userLoged)
-  let url = 'https://623b1a4c46a692bd844e72cc.mockapi.io/api/food/vuejs/restorant'
-  const show = ref(false)
-  async function getData(){
-    const r = await fetch(url)
-    let restorant = await r.json()
-    useProducts().restorants = restorant
+  export default {
+    setup(){
+      const data = useProducts()
+      const {restorants, getData} = data
+      return { restorants, getData }
+    }
   }
-  getData()
 </script>
 
 <style scoped>
