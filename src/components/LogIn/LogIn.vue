@@ -3,9 +3,7 @@
     class="formContain"
     ref="form"
     v-model="valid"
-    lazy-validation
-    @submit="logIn"
-    >
+    lazy-validation>
     <h1>Log In</h1>
 
   <v-row>
@@ -43,22 +41,21 @@
         :disabled="!valid"
         color="success"
         class="mr-4"
-        type="submit">
+        @click="logIn"
+        to="/">
         Log in
       </v-btn>
 
       <v-btn
         color="error"
         class="mr-4"
-        @click="reset"
-      >
+        @click="reset">
         Reset
       </v-btn>
 
       <v-btn
         color="warning"
-        to="/signup"
-        @click="goToSignUp">
+        to="/signup">
         Sign up
       </v-btn>
   </v-form>
@@ -81,11 +78,8 @@
   function logIn(){
     localStorage.setItem('user', JSON.stringify(this.userData))
     console.log(this.userData.mail);
-  }
-  function goToSignUp(){
-    navigator
-  }
 
+  }
 
 </script>
 

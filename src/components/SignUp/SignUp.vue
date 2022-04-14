@@ -19,7 +19,7 @@
     </v-col>
     <v-col
       cols="12"
-      md="4">
+        md="4">
 
       <v-text-field
         v-model="userData.phone"
@@ -49,8 +49,7 @@
       <v-btn
         color="error"
         class="mr-4"
-        @click="reset"
-      >
+        @click="reset">
         Reset
       </v-btn>
 
