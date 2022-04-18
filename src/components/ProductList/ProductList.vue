@@ -40,9 +40,9 @@ import { ref } from '@vue/reactivity'
 import {useProducts} from '../../store/products'
   export default {
     setup(){
-      const data = useProducts()
-      const {restorants, getData} = data
-      return { restorants, getData }
+      const data = useProducts().getData
+      const rest = useProducts().restorants
+      return { data, rest }
     }
   }
 </script>

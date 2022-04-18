@@ -12,5 +12,5 @@ export const useProducts = defineStore('productsApi',{
             state.restorants = restorant
             console.log(state.restorants)
         }
-    }  
+    }
 })

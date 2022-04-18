@@ -61,7 +61,9 @@
   </v-form>
 </template>
 
-<script setup>
+<script>
+export default {
+  setup(){
   const valid= true
   const userData= {
     name: '',
@@ -80,7 +82,11 @@
     console.log(this.userData.mail);
 
   }
-
+  return {
+    valid, userData, reset, logIn
+  }
+  }
+}
 </script>
 
 <style scoped>
