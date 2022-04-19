@@ -1,7 +1,7 @@
 <template>
   <v-main>
     <h3>
-      Welcome to {{prods.restorants.length}} restorant
+      Welcome {{user.userLoged.name}} to {{prods.restorants.length}} restorant
     </h3>
     <div class="containFlex">
       <v-col v-for="resto in prods.restorants" :key="resto.id"
@@ -37,7 +37,8 @@
 
 <script setup>
 import {useProducts} from '../../store/products'
-
+  import { useUser } from '../../store/index'
+  const user = useUser()  
   const prods = useProducts()
   prods.getData()
 

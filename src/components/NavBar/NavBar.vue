@@ -8,11 +8,13 @@
         class="btnNav"
         variant="outlined"
         color="warning">Cart list</v-btn>
-        <v-btn 
-        class="btnNav"
-        variant="outlined"
-        color="error"
-        @click="user.logOut()">Log out</v-btn>
+        <router-link to="/login">
+            <v-btn
+                class="btnNav"
+                variant="outlined"
+                color="error"
+                @click="user.logOut()">Log out</v-btn>
+        </router-link>
     </v-app-bar>
 </template>
 
