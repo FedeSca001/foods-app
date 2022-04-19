@@ -22,7 +22,7 @@ export const useUser = defineStore('users', {
       this.userData.adress = "";
     },
     logOut(){
-      localStorage.clear()
+      localStorage.setItem('user', JSON.stringify({}))
       location.reload()
     }
   }

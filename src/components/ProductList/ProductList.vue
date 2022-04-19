@@ -24,7 +24,7 @@
           <v-card-actions>
             <v-btn
               color="green"
-              :to="{path: '/restorantfoods/', params: {id: resto.id}}">
+              :to="{name:'restorantfoods', params: {id:resto.id} }">
                 Go to restorant</v-btn>
           </v-card-actions>
           <v-card-text v-for="food in resto.foods" :key="food.id">
@@ -42,6 +42,9 @@ import {useProducts} from '../../store/products'
   const user = useUser()
   const prods = useProducts()
   prods.getData()
+  function mostrarId (prod){
+    console.log(prod)
+  }
 </script>
 
 <style scoped>

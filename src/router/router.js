@@ -16,7 +16,12 @@ const routes = [
     },
     {
         path: '/restorantfoods/:id',
+        name: 'restorantfoods',
         component: ()=> import('../components/RestorantFoods/RestorantFoods.vue')
+    },
+    {
+        path: '/cartlist',
+        component: ()=> import ('../components/CartList/CartList.vue')
     }
 ]
 

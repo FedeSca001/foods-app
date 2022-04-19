@@ -1,8 +1,6 @@
 <template>
-  <h3>{{foodsList[$route.params.id-1].name}}</h3>
-  <h4>Select your favourite food</h4>
   <div class="containFlex">
-    <v-col v-for="item in foodsList[$route.params.id-1].foods" :key="item.id"
+    <v-col v-for="item in cart.cartList" :key="item.id"
       cols="4">
       <v-card
         class="mx-auto my-12"
@@ -28,10 +26,18 @@
             {{item.desciption}}
           </div>
           <div class="my-4 text-subtitle-1">
-            •• $ {{item.price}}  ••
+            •• $ {{item.price*item.cant}}  ••
           </div>
         </v-card-text>
 
+        <v-divider class="mx-4 mb-1"></v-divider>
+        <v-card-text>
+          <div>
+            <v-btn @click="()=>{if(item.cant<100){item.cant++}}">+</v-btn>
+            Cant: {{item.cant}}
+            <v-btn @click="()=>{if(item.cant>1){item.cant--}}">-</v-btn>
+          </div>
+        </v-card-text>
         <v-divider class="mx-4 mb-1"></v-divider>
 
         <v-card-actions>
@@ -49,11 +55,8 @@
 </template>
 
 <script setup>
-  import {useProducts} from '../../store/products'
-
-  const items = useProducts()
-  const foodsList = items.restorants
-
+import { useProducts } from '../../store/products'
+const cart = useProducts()
 </script>
 
 <style>

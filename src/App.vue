@@ -1,12 +1,32 @@
 <template>
   <v-app>
-    <router-view></router-view>
+    <section v-if="loged">
+      <NavBar/>
+      <v-main>
+        <router-view/>
+      </v-main>
+    </section>
+    <section v-else>
+      <LogIn/>
+    </section> 
   </v-app>
 </template>
 
 <script>
-export default {
 
+import {useUser} from './store/index'
+import LogIn from "./components/LogIn/LogIn.vue"
+import NavBar from './components/NavBar/NavBar.vue'
+
+export default {
+  components: {
+    LogIn,
+    NavBar
+},
+  setup(){
+    const loged = useUser().userLoged
+    return{ loged }
+  }
 }
 </script>
 
