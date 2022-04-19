@@ -1,7 +1,7 @@
 <template>
   <v-main>
     <h3>
-      Welcome {{user.userLoged.name}} to {{prods.restorants.length}} restorant
+      Hi {{user.userLoged.name}}, welcome  to {{prods.restorants.length}} restorant
     </h3>
     <div class="containFlex">
       <v-col v-for="resto in prods.restorants" :key="resto.id"
@@ -23,7 +23,8 @@
           </v-card-subtitle>
           <v-card-actions>
             <v-btn
-              color="green">
+              color="green"
+              :to="{path: '/restorantfoods/', params: {id: resto.id}}">
                 Go to restorant</v-btn>
           </v-card-actions>
           <v-card-text v-for="food in resto.foods" :key="food.id">
@@ -38,10 +39,9 @@
 <script setup>
 import {useProducts} from '../../store/products'
   import { useUser } from '../../store/index'
-  const user = useUser()  
+  const user = useUser()
   const prods = useProducts()
   prods.getData()
-
 </script>
 
 <style scoped>

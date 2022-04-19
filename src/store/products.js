@@ -6,7 +6,7 @@ export const useProducts = defineStore('productsApi',{
         url: 'https://623b1a4c46a692bd844e72cc.mockapi.io/api/food/vuejs/restorant'
     }),
     actions:{
-        async getData(){ 
+        async getData(){
             const r = await fetch(this.url)
             this.restorants = await r.json()
         }

@@ -13,6 +13,10 @@ const routes = [
     {
         path: '/login',
         component: ()=> import('../components/LogIn/LogIn.vue')
+    },
+    {
+        path: '/restorantfoods/:id',
+        component: ()=> import('../components/RestorantFoods/RestorantFoods.vue')
     }
 ]
 
