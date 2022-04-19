@@ -1,10 +1,10 @@
 <template>
   <v-main>
     <h3>
-      Welcome to {{useProducts().restorants.length}} restorant
+      Welcome to {{prods.restorants.length}} restorant
     </h3>
     <div class="containFlex">
-      <v-col v-for="resto in useProducts().restorants" :key="resto.id"
+      <v-col v-for="resto in prods.restorants" :key="resto.id"
         cols="4"
         class="column">
         <v-card
@@ -26,7 +26,7 @@
               color="green">
                 Go to restorant</v-btn>
           </v-card-actions>
-          <v-card-text v-for="food in resto.foods" :key="food.id" >
+          <v-card-text v-for="food in resto.foods" :key="food.id">
             {{food.foodname}}
           </v-card-text>
         </v-card>
@@ -35,16 +35,12 @@
   </v-main>
 </template>
 
-<script>
-import { ref } from '@vue/reactivity'
+<script setup>
 import {useProducts} from '../../store/products'
-  export default {
-    setup(){
-      const data = useProducts().getData
-      const rest = useProducts().restorants
-      return { data, rest }
-    }
-  }
+
+  const prods = useProducts()
+  prods.getData()
+
 </script>
 
 <style scoped>
