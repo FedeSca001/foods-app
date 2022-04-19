@@ -52,11 +52,14 @@
       </v-card>
     </v-col>
   </div>
+  <v-btn @click="delette.deletteCart()">delette cart</v-btn>
 </template>
 
 <script setup>
 import { useProducts } from '../../store/products'
+
 const cart = useProducts()
+const delette = useProducts()
 </script>
 
 <style>
