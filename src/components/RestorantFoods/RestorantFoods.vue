@@ -1,13 +1,9 @@
 <template>
-  <p>product of restorant</p>
+  <p>product of restorant{{$route.params.id-1}}</p>
 </template>
 
-<script>
-export default {
-    setup(){
-        
-    }
-}
+<script setup>
+
 </script>
 
 <style>
