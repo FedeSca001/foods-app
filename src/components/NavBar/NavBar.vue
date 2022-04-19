@@ -12,8 +12,8 @@
             variant="outlined"
             color="warning"
             to="/cartlist">
-                Cart list -/
-                <div>{{cart.cartList.length}}-</div>
+                Cart list
+                <div v-show="cart.cartList.length > 0"> -/{{cart.cartList.length}}-</div>
         </v-btn>
 
         <router-link to="/login">

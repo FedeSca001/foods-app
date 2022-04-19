@@ -5,7 +5,7 @@
     </h3>
     <div class="containFlex">
       <v-col v-for="resto in prods.restorants" :key="resto.id"
-        cols="4"
+        cols="3"
         class="column">
         <v-card
           class="mx-auto">
@@ -28,7 +28,7 @@
                 Go to restorant</v-btn>
           </v-card-actions>
           <v-card-text v-for="food in resto.foods" :key="food.id">
-            {{food.foodname}}
+            {{food.foodname}}  -- $ {{food.price}} --
           </v-card-text>
         </v-card>
         </v-col>

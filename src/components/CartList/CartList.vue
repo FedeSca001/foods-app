@@ -41,28 +41,27 @@
         <v-divider class="mx-4 mb-1"></v-divider>
 
         <v-card-actions>
-          <v-btn
-            variant="outlined"
-            color="success"
-            text
-            @click="items.addToCart(item)">
-            Add to Cart
-          </v-btn>
+          <v-btn color="error" text @click="deletItem(i)">X Delete</v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
   </div>
-  <v-btn @click="delette.deletteCart()">delette cart</v-btn>
+  <v-btn @click="cart.deletteCart()">delette cart</v-btn>
+  <v-btn to="/checkout">Comfirm cart</v-btn>
 </template>
 
 <script setup>
-import { useProducts } from '../../store/products'
+  import { useProducts } from '../../store/products'
 
-const cart = useProducts()
-const delette = useProducts()
+  const cart = useProducts()
+
+  function deletItem(i) {
+      cart.cartList.splice(i, 1);
+      localStorage.setItem('cartList', JSON.stringify(this.cartList))
+  }
 </script>
 
-<style>
+<style scoped>
 .containFlex{
     display: flex;
     flex-wrap: wrap;
