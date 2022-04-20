@@ -18,6 +18,10 @@ export const useProducts = defineStore('productsApi',{
         deletteCart(){
             this.cartList = []
             localStorage.setItem('cartList', JSON.stringify(this.cartList))
+        },
+        deletItem(i) {
+            this.cartList.splice(i, 1);
+            localStorage.setItem('cartList', JSON.stringify(this.cartList))
         }
     }
 })

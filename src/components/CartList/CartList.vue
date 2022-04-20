@@ -1,6 +1,6 @@
 <template>
   <div class="containFlex">
-    <v-col v-for="item in cart.cartList" :key="item.id"
+    <v-col v-for="item, i in cart.cartList" :key="item.id"
       cols="4">
       <v-card
         class="mx-auto my-12"
@@ -41,7 +41,7 @@
         <v-divider class="mx-4 mb-1"></v-divider>
 
         <v-card-actions>
-          <v-btn color="error" text @click="deletItem(i)">X Delete</v-btn>
+          <v-btn color="error" text @click="cart.deletItem(i)">X Delete</v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
@@ -55,10 +55,7 @@
 
   const cart = useProducts()
 
-  function deletItem(i) {
-      cart.cartList.splice(i, 1);
-      localStorage.setItem('cartList', JSON.stringify(this.cartList))
-  }
+
 </script>
 
 <style scoped>
