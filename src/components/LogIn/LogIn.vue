@@ -52,11 +52,6 @@
         Reset
       </v-btn>
 
-      <v-btn
-        color="warning"
-        to="/signup">
-        Sign up
-      </v-btn>
   </v-form>
 </template>
 

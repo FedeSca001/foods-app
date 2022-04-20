@@ -47,14 +47,14 @@
     </v-col>
   </div>
   <v-btn @click="cart.deletteCart()">delette cart</v-btn>
-  <v-btn to="/checkout">Comfirm cart</v-btn>
+  <v-btn to="/checkout" :disabled="!cart.cartList.length">Comfirm cart</v-btn>
 </template>
 
 <script setup>
   import { useProducts } from '../../store/products'
 
   const cart = useProducts()
-
+  let disab = true
 
 </script>
 
