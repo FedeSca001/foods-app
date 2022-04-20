@@ -75,7 +75,6 @@
 
 <script setup>
 import { useUser } from '../../store';
-import firebase from "firebase/compat/app"
 
   let user = useUser()
   const valid = true

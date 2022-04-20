@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import firebase from "firebase/compat/app"
 
 
 export const useUser = defineStore('users', {
@@ -15,16 +14,6 @@ export const useUser = defineStore('users', {
   }),
   actions: {
     logIn(){
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.userData.mail, this.userData.pass)
-        .then((data) => {
-          router.push('/')
-        })
-        .catch(error => {
-          console.log(error.code)
-          alert(error.message);
-        });
       localStorage.setItem('user', JSON.stringify(this.userData))
       location.reload()
     },
