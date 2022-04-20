@@ -8,7 +8,7 @@
     </section>
     <section v-else>
       <LogIn/>
-    </section> 
+    </section>
   </v-app>
 </template>
 

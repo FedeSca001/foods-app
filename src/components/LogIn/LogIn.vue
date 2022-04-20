@@ -66,19 +66,21 @@
         Reset
       </v-btn>
       <v-btn
-        color="warning"
-        to="/signup">
+        @click="!toSignUp"
+        color="warning">
         Sign up
       </v-btn>
   </v-form>
+  <SignUp v-if="toSignUp"/>
 </template>
 
 <script setup>
+import SignUp from '../SignUp/SignUp.vue';
 import { useUser } from '../../store';
 
   let user = useUser()
-  const valid = true
-
+  let valid = true
+  let toSignUp = false
 </script>
 
 <style scoped>
