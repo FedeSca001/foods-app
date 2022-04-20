@@ -11,6 +11,10 @@ const routes = [
         component: ()=> import('../components/LogIn/LogIn.vue')
     },
     {
+        path: '/signup',
+        component: ()=> import('../components/SignUp/SignUp.vue')
+    },
+    {
         path: '/restorantfoods/:id',
         name: 'restorantfoods',
         component: ()=> import('../components/RestorantFoods/RestorantFoods.vue')
