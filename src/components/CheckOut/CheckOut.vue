@@ -8,7 +8,7 @@
         v-for="product in cart.cartList" :key="product.id"
         cols="2">
         <v-card
-            class="mx-auto"
+            class="mx-auto column"
             max-width="400">
             <v-img
             class="white--text align-end"
@@ -52,10 +52,9 @@
     flex-wrap: wrap;
     padding: 0px;
     margin: 0;
-    justify-items: center;
 }
 .column{
-    width: 21vw;
+    padding: 1vw;
     margin: 0 auto;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <section v-if="loged">
+    <section v-if="loged.userLoged">
       <NavBar/>
-      <v-main>
+      <v-main class="main">
         <router-view/>
       </v-main>
     </section>
@@ -12,27 +12,17 @@
   </v-app>
 </template>
 
-<script>
-
+<script setup>
 import {useUser} from './store/index'
-import LogIn from "./components/LogIn/LogIn.vue"
+import LogIn from './components/LogIn/LogIn.vue'
 import NavBar from './components/NavBar/NavBar.vue'
 
-export default {
-  components: {
-    LogIn,
-    NavBar
-},
-  setup(){
-    const loged = useUser().userLoged
-    return{ loged }
-  }
-}
+const loged = useUser()
+
 </script>
 
 <style scoped>
-.imgLogo{
-  margin: 0 auto;
-  width: 40vw;
+.main{
+  text-align: center;
 }
 </style>

@@ -61,6 +61,8 @@
 </template>
 
 <script setup>
+import { useUser } from '../../store';
+  let user = useUser()
   const valid = true
 </script>
 

@@ -16,13 +16,11 @@
                 <div v-show="cart.cartList.length > 0"> -/{{cart.cartList.length}}-</div>
         </v-btn>
 
-        <router-link to="/login">
-            <v-btn
-                class="btnNav"
-                variant="outlined"
-                color="error"
-                @click="user.logOut()">Log out</v-btn>
-        </router-link>
+        <v-btn
+            class="btnNav"
+            variant="outlined"
+            color="error"
+            @click="user.logOut()">Log out</v-btn>
     </v-app-bar>
 </template>
 
