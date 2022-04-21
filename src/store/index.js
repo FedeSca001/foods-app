@@ -13,9 +13,18 @@ export const useUser = defineStore('users', {
     }
   }),
   actions: {
-    logIn(){
-      localStorage.setItem('user', JSON.stringify(this.userData))
-      location.reload()
+    logIn(userData){
+      const validName = !'' && this.userData.name.length > 5 &&  this.userData.name.length < 12
+      const validPhone = !'' && this.userData.phone.length < 12
+      const validMail = !'' && this.userData.phone.length > 6 && this.userData.phone.length < 12
+      const validPass = !''
+      const validAdress = !''
+      if (validName && validPhone && validMail && validAdress && validPass) {
+        localStorage.setItem('user', JSON.stringify(this.userData))
+        location.reload()
+      } else {
+        alert('Fill in the data correctly')
+      }
     },
     reset(){
       this.userData.name = "";

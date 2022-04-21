@@ -4,6 +4,7 @@ export const useProducts = defineStore('productsApi',{
     state: ()=>({
         restorants: [],
         cartList: JSON.parse(localStorage.getItem('cartList')) || [],
+        cartConfirm: false,
     }),
     actions:{
         async getData(){
@@ -22,6 +23,10 @@ export const useProducts = defineStore('productsApi',{
         deletItem(i) {
             this.cartList.splice(i, 1);
             localStorage.setItem('cartList', JSON.stringify(this.cartList))
+        },
+        confirCart(){
+            this.cartConfirm = true
+            this.deletteCart()
         }
     }
 })
