@@ -11,7 +11,7 @@ export const useUser = defineStore('users', {
       pass: '',
       adress: ''
     },
-    admin: {
+    adminAccess: {
       name: 'admin2.0',
       phone: '123456789',
       mail: 'admin@admin.com',
@@ -20,7 +20,7 @@ export const useUser = defineStore('users', {
     }
   }),
   actions: {
-    logIn(userData){
+    logIn(){
       const validName = !'' && this.userData.name.length > 5 &&  this.userData.name.length < 12
       const validPhone = !'' && this.userData.phone.length < 12
       const validMail = !'' && this.userData.phone.length > 6 && this.userData.phone.length < 12

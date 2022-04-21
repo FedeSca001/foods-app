@@ -2,7 +2,6 @@
   <v-form
     class="formContain"
     ref="form"
-    v-model="valid"
     lazy-validation>
     <h1>Log In</h1>
 
@@ -52,7 +51,6 @@
         required
       ></v-text-field>
         <v-btn
-          :disabled="!valid"
           color="success"
           class="mr-4"
           @click="user.logIn">
@@ -69,43 +67,20 @@
         @click="setLogAdmin()">
         Admin
       </v-btn>
+  <LogAdmin/>
   </v-form>
-  <form v-if="logAdmin == true">
-    <v-row>
-    <v-col
-      cols="12"
-      md="8">
-      <v-text-field
-        v-model="user.userData.name"
-        label="Name"
-        required
-      ></v-text-field>
-    </v-col>
-    <v-col
-      cols="12"
-      md="4">
-      <v-text-field
-        v-model="user.userData.pass"
-        label="Password"
-        required
-        type="password"
-      ></v-text-field>
-    </v-col>
-  </v-row>
-  </form>
 </template>
 
 <script setup>
-import { useUser } from '../../store'
+  import { useUser } from '../../store'
+  import LogAdmin from './LogAdmin.vue'
 
-  let logAdmin = false
+  let admin = false
   function setLogAdmin(){
-    logAdmin = !logAdmin
-    console.log(logAdmin)
+    admin = !admin
+    console.log(admin)
   }
-
   let user = useUser()
-  let valid = true
 </script>
 
 <style scoped>
