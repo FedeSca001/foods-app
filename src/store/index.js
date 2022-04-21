@@ -10,6 +10,13 @@ export const useUser = defineStore('users', {
       mail: '',
       pass: '',
       adress: ''
+    },
+    admin: {
+      name: 'admin2.0',
+      phone: '123456789',
+      mail: 'admin@admin.com',
+      pass: 'admin2.0',
+      adress: 'admin123'
     }
   }),
   actions: {
