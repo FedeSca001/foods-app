@@ -7,8 +7,8 @@
 
 <script setup>
 import ProductList from '../components/ProductList/ProductList.vue'
-import { useUser } from '../store'
 import SelectSection from '../components/SelectSection/SelectSection.vue'
+import { useUser } from '../store'
 
 
 let use = useUser()
