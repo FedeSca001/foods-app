@@ -33,7 +33,7 @@
     import { useProducts } from '../../store/products'
     import { useUser } from '../../store/index'
     import axios from 'axios'
-import router from '../../router/router';
+    import router from '../../router/router';
 
     let cart = useProducts()
     let total = 0
@@ -44,7 +44,8 @@ import router from '../../router/router';
         const send = await axios.post(url, cart.cartList)
         const resp = console.log(send);
         cart.deletteCart()
-        router.push('/')
+        router.push({ path: '/' })
+        location.reload();
     }
     function totalToPay(){
         cart.cartList.forEach(element => {
