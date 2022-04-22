@@ -1,11 +1,18 @@
 <template>
-  <p>botonera de secciones</p>
+  <v-btn
+      class="ordersButt"
+      variant="outlined"
+      color="error"
+      to="/orderlist">Orders
+  </v-btn>
 </template>
 
-<script>
+<script setup>
 
 </script>
 
 <style>
-
+.ordersButt{
+  margin: 3vw;
+}
 </style>
