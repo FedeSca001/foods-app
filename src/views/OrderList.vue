@@ -1,5 +1,11 @@
 <template>
     <div class="containFlex">
+    <v-btn
+      class="ordersButt"
+      variant="outlined"
+      color="error"
+      @click="cleanOrder()">Cleaner
+    </v-btn>
     <v-col v-for="item in orderList[0]" :key="item.id"
       cols="4">
       <v-card
@@ -38,13 +44,20 @@
 
 <script setup>
     import axios from 'axios';
-    const orderList = []
+    let orderList = []
+    const url = 'https://62630e3ac430dc560d2b8a72.mockapi.io/orderlist'
 
     async function getOrder (){
-    const url = 'https://62630e3ac430dc560d2b8a72.mockapi.io/foods'
     const send = await axios.get(url)
     orderList.push(send.data)
-    const resp = console.log(orderList)
+    console.log(orderList)
+    }
+
+
+    async function cleanOrder (){
+      const clean = await axios.delete(url, {})
+      let orderList = []
+      return { orderList, clean }
     }
     getOrder()
 </script>
