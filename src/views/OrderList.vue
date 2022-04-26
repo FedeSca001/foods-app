@@ -1,15 +1,10 @@
 <template>
     <div class="containFlex">
-    <v-btn
-      class="ordersButt"
-      variant="outlined"
-      color="error"
-      @click="cleanOrder()">Cleaner
-    </v-btn>
-    <v-col v-for="item in list" :key="item.id"
-      cols="4">
+    <div v-for="item in list" :key="item.id">
+      <img :src="item.productimg" class="imgOrder"/>
       <p>{{item.foodname}}</p>
-    </v-col>
+      <p>$ {{item.price}}</p>
+    </div>
   </div>
 </template>
 
@@ -20,12 +15,16 @@
   const list = order.orderList
 </script>
 
-<style>
+<style scoped>
 .containFlex{
     display: flex;
     flex-wrap: wrap;
-    padding: 0px;
+    padding: 2vw;
     margin: 0;
     justify-items: center;
+    gap: 3vw;
+}
+.imgOrder{
+  width: 20vw;
 }
 </style>
