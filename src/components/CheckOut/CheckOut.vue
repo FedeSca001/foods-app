@@ -40,11 +40,9 @@
     let user = useUser()
 
     async function postOrder (){
-        const url = 'https://62630e3ac430dc560d2b8a72.mockapi.io/orderlist'
+        const url = 'https://62630e3ac430dc560d2b8a72.mockapi.io/orderlist/1'
         const send = await axios.post(url, cart.cartList)
-        const resp = console.log(send);
         cart.deletteCart()
-        router.push({ path: '/' })
         location.reload();
     }
     function totalToPay(){
