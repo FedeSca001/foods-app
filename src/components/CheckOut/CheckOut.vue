@@ -32,18 +32,15 @@
 <script setup>
     import { useProducts } from '../../store/products'
     import { useUser } from '../../store/index'
-    import axios from 'axios'
-    import router from '../../router/router';
 
     let cart = useProducts()
     let total = 0
     let user = useUser()
 
     async function postOrder (){
-        const url = 'https://62630e3ac430dc560d2b8a72.mockapi.io/orderlist/1'
-        const send = await axios.post(url, cart.cartList)
+        cart.orderList.push(this.cart.cartList)
         cart.deletteCart()
-        location.reload();
+        location.reload()
     }
     function totalToPay(){
         cart.cartList.forEach(element => {

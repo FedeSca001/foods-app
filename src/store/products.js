@@ -5,6 +5,7 @@ export const useProducts = defineStore('productsApi',{
         restorants: [],
         cartList: JSON.parse(localStorage.getItem('cartList')) || [],
         cartConfirm: false,
+        orderList: []
     }),
     actions:{
         async getData(){
