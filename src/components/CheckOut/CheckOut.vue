@@ -26,7 +26,7 @@
       </v-row>
     </div>
     <h4>The total to pay is ${{total}}</h4>
-    <v-btn @click="postOrder()">To confirm order</v-btn>
+    <v-btn @click="plusOrder">To confirm order</v-btn>
 </template>
 
 <script setup>
@@ -34,21 +34,17 @@
     import { useUser } from '../../store/index'
 
     let cart = useProducts()
+    let plusOrder = cart.postOrder
     let total = 0
     let user = useUser()
 
-    async function postOrder (){
-        cart.orderList.push(this.cart.cartList)
-        cart.deletteCart()
-        location.reload()
-    }
     function totalToPay(){
         cart.cartList.forEach(element => {
         total += element.cant*element.price
     });
     }
     totalToPay()
-
+    console.log(cart.orderList)
 </script>
 
 <style scoped>
