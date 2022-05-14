@@ -67,13 +67,13 @@
         @click="setLogAdmin()">
         Admin
       </v-btn>
-  <LogAdmin/>
+
   </v-form>
 </template>
 
 <script setup>
   import { useUser } from '../../store'
-  import LogAdmin from './LogAdmin.vue'
+
 
   let admin = false
   function setLogAdmin(){
